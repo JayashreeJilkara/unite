@@ -1,2 +1,0 @@
-class Ditributable < ApplicationRecord
-end

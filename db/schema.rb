@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 20160820121609) do
     t.index ["institute_id"], name: "fk_rails_262e8e92c4", using: :btree
   end
 
-  create_table "ditributables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "distributables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "institute_id"
     t.string   "file_name"
     t.string   "file_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["institute_id"], name: "fk_rails_6286e8b755", using: :btree
+    t.index ["institute_id"], name: "fk_rails_1cdec52c64", using: :btree
   end
 
   create_table "institutes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20160820121609) do
   add_foreign_key "addresses", "institutes"
   add_foreign_key "addresses", "users"
   add_foreign_key "courses", "institutes"
-  add_foreign_key "ditributables", "institutes"
+  add_foreign_key "distributables", "institutes"
   add_foreign_key "institutes", "users"
   add_foreign_key "review_responses", "reviews"
   add_foreign_key "review_responses", "users"
