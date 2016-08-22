@@ -73,14 +73,15 @@ ActiveRecord::Schema.define(version: 20160820121609) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name",                               null: false
-    t.string   "last_name",                                null: false
-    t.string   "email",      limit: 100,                   null: false
-    t.string   "password",                                 null: false
-    t.boolean  "is_admin",                 default: false
-    t.text     "occupation", limit: 65535
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.string   "first_name",                                    null: false
+    t.string   "last_name",                                     null: false
+    t.string   "email",           limit: 100,                   null: false
+    t.string   "password_digest",                               null: false
+    t.string   "password_salt",                                 null: false
+    t.boolean  "is_admin",                      default: false
+    t.text     "occupation",      limit: 65535
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
