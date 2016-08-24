@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
+gem 'omniauth-google-oauth2'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

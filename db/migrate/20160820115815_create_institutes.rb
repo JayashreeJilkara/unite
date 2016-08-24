@@ -5,7 +5,5 @@ class CreateInstitutes < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
     end
-
-    add_foreign_key :institutes, :users
   end
 end

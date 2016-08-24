@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'users#new'
-  get 'log_out', to: 'sessions#destroy'
-  post 'log_in', to: 'sessions#create'
-  resources :users, only: [:create]
+  root to: 'home#index'
+  get 'institutes', to: 'institutes#index'
 end

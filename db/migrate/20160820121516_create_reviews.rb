@@ -9,7 +9,6 @@ class CreateReviews < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_foreign_key :reviews, :users
     add_foreign_key :reviews, :institutes
   end
 end
