@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails'
 gem 'rails', '~> 5.0.0'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sqlite3'
 gem 'mysql2'
 gem 'puma', '~> 3.0'
