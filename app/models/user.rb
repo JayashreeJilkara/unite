@@ -8,4 +8,12 @@ class User < ApplicationRecord
   has_many :review_responses
   has_many :institutes
   has_one :address
+
+  def serializable_hash(options)
+    options ||= {}
+
+    super({
+        include: [:institutes]
+    }.merge(options))
+  end
 end
