@@ -1,3 +1,49 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row-xs-flex-center {
+  display:flex;
+  align-items:center;
+}
+@media ( min-width:768px ) {
+  .row-sm-flex-center {
+    display:flex;
+    align-items:center;
+  }
+}
+@media ( min-width: 992px ) {
+  .row-md-flex-center {
+    display:flex;
+    align-items:center;
+  }
+}
+@media ( min-width: 1200px ) {
+  .row-lg-flex-center {
+    display:flex;
+    align-items:center;
+  }
+}
+
+.line {
+  padding-right: 21px; /* 20+1 */
+  position: relative;
+  padding-bottom: 9px;
+}
+.line:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-right: 1px solid #f0f0f0;
+  top: 5%;
+  bottom: 5%;
+}
+
+.site-name {
+  font-weight: 200;
+}
+
+.login-panel {
+  margin-top: 20%;
+  background: rgba(255, 255, 255, 0.90) !important;
+}
