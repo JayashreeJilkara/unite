@@ -9,9 +9,7 @@ class User < ApplicationRecord
   has_many :institutes
   has_one :address
 
-  def serializable_hash(options)
-    options ||= {}
-
+  def serializable_hash(options={})
     super({
         include: [:institutes]
     }.merge(options))

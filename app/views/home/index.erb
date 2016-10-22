@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="unite">
+<html>
 <head>
   <title>Unite</title>
   <%= csrf_meta_tags %>
@@ -8,8 +8,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<body class="background-image">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -18,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Students <b>Unite</b></a>
+      <a class="navbar-brand" href="/">Students<b>Unite</b></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-right">
@@ -38,8 +38,17 @@
   </div>
 </nav>
 
-<div class="container main-container">
-
+<div class="container">
+  <div class="panel panel-default content">
+    <div class="panel-body main-container">
+      <pre>
+        <%=	 @institutes.to_json %>
+      </pre>
+    </div>
+  </div>
 </div>
+<script>
+  $('.background-image').backstretch("<%= image_url('background/back.jpeg') %>");
+</script>
 </body>
 </html>

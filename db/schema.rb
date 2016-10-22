@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 20160824125707) do
   end
 
   create_table "institutes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.text    "description", limit: 65535
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["user_id"], name: "fk_rails_4c91ef4817", using: :btree
   end
 
