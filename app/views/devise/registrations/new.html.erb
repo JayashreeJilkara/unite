@@ -1,33 +1,47 @@
 <div class="container">
   <div class="col-xs-6 col-xs-offset-3">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <fieldset>
-          <legend class="text-center">Sign Up</legend>
-          <%= devise_error_messages! %>
-          <div class="form-group">
-            <%= f.text_field :first_name, autofocus: true, class: 'form-control', placeholder: "First Name" %>
-          </div>
-          <div class="form-group">
-            <%= f.text_field :last_name, class: 'form-control', placeholder: "Last Name" %>
-          </div>
-          <div class="form-group">
-            <%= f.email_field :email, class: 'form-control', placeholder: "Email Address" %>
-          </div>
-          <div class="form-group">
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "Password" %>
-          </div>
-          <div class="form-group">
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: "Password Confirmation" %>
-          </div>
-          <div class="form-group">
-            <%= f.submit "Create an Account", class: 'btn btn-primary col-xs-12' %>
-          </div>
-        </fieldset>
-    <% end %>
-    <hr>
-    <div class="text-center">
-      <h3>I have an account</h3>
-      <%= link_to "Log in", new_session_path(resource_name) %>
+    <div class="panel panel-default login-panel">
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <fieldset>
+              <legend>Sign Up</legend>
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <%= f.text_field :first_name, class: 'form-control input-sm', placeholder: 'First Name' %>
+              </div>
+              <div class="form-group">
+                <%= f.text_field :last_name, class: 'form-control input-sm', placeholder: 'Last Name' %>
+              </div>
+              <div class="form-group">
+                <%= f.email_field :email, class: 'form-control input-sm', placeholder: 'Email Address' %>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password, autocomplete: 'off', class: 'form-control input-sm', placeholder: 'Password' %>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control input-sm', placeholder: 'Password Confirmation' %>
+              </div>
+              <div class="form-group">
+                <%= f.submit 'Create an Account', class: 'btn btn-sm btn-primary col-xs-12' %>
+              </div>
+            </fieldset>
+        <% end %>
+        <hr>
+        <div class="text-center">
+          <h5>I have an account</h5>
+          <%= link_to 'Log in', new_session_path(resource_name) %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<script>
+  $('.login-background').backstretch([
+    "<%= image_url('background/1.jpeg') %>",
+    "<%= image_url('background/2.jpeg') %>",
+    "<%= image_url('background/3.jpeg') %>",
+    "<%= image_url('background/4.jpeg') %>",
+    "<%= image_url('background/5.jpeg') %>",
+    "<%= image_url('background/6.jpeg') %>"
+  ], {duration: 6000, fade: 1000})
+</script>
