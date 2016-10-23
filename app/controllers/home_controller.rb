@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @institutes = Institute.order('created_at DESC').all
-    render :layout => false
+    render :layout => 'landing'
   end
 end

@@ -25,20 +25,6 @@
   }
 }
 
-.line {
-  padding-right: 21px; /* 20+1 */
-  position: relative;
-  padding-bottom: 9px;
-}
-.line:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  border-right: 1px solid #f0f0f0;
-  top: 5%;
-  bottom: 5%;
-}
-
 .site-name {
   font-weight: 200;
 }
