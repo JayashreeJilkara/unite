@@ -6,3 +6,12 @@
   height: 95vh;
   background: rgba(255, 255, 255, 0.92);
 }
+
+.nav-tabs > li > a {
+  line-height: 44px;
+  box-shadow: none;
+}
+
+.nav-tabs > li > a:focus {
+  box-shadow: none;
+}

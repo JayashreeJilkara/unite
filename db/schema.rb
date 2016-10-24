@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160824125707) do
     t.integer  "user_id"
     t.string   "name"
     t.text     "description", limit: 65535
+    t.string   "image"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.index ["user_id"], name: "fk_rails_4c91ef4817", using: :btree

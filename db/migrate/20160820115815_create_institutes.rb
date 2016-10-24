@@ -4,6 +4,7 @@ class CreateInstitutes < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.string :name
       t.text :description
+      t.string :image
 
       t.timestamps
     end

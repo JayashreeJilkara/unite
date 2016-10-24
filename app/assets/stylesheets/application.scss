@@ -22,13 +22,13 @@
 .line {
   padding-right: 21px; /* 20+1 */
   position: relative;
-  padding-bottom: 9px;
+  padding-bottom: 0px;
 }
 .line:after {
   content: '';
   position: absolute;
   right: 0;
-  border-right: 1px solid #f0f0f0;
-  top: 5%;
-  bottom: 5%;
+  border-right: 1px solid #e0e0e0;
+  top: 8%;
+  bottom: 8%;
 }
