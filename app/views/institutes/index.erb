@@ -1,4 +1,12 @@
 <div class="col-xs-10 col-xs-offset-1">
+  <% if current_page?(institute_path(:id)) %>
+    <ul class="breadcrumb">
+      <li>
+        <%=link_to 'Institutes', institutes_url %>
+      </li>
+    </ul>
+  <% end %>
+
   <% @institutes.each do |institute| %>
     <div class="panel panel-default">
       <div class="panel-body college-data">
