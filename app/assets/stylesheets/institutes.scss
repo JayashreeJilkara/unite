@@ -10,3 +10,19 @@ img {
   -webkit-box-shadow: 3px 3px 1px #ccc;
   -moz-box-shadow: 3px 3px 1px #ccc;
 }
+
+.college-data {
+  .image-container {
+    min-height: 250px
+  }
+  .college-content {
+    min-height: 250px;
+    position: relative;
+    .content-wrapper {
+      margin-top: 20px;
+      .lead {
+        font-size: 16px !important;
+      }
+    }
+  }
+}
