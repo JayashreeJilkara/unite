@@ -3,7 +3,14 @@ class InstitutesController < ApplicationController
 
   def index
     @institutes = Institute.order('created_at DESC').all
-    render :layout => 'landing'
+  end
+
+  def show
+    @institute = Institute.find(params[:id])
+    @breadcrumbs = [
+        {text: 'Institutes', href: institutes_path, class: ''},
+        {text: @institute.name, href: '#', class: 'active'}
+    ]
   end
 
   def create

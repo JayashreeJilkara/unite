@@ -1,17 +1,9 @@
 <div class="col-xs-10 col-xs-offset-1">
-  <% if current_page?(institute_path(:id)) %>
-    <ul class="breadcrumb">
-      <li>
-        <%=link_to 'Institutes', institutes_url %>
-      </li>
-    </ul>
-  <% end %>
-
   <% @institutes.each do |institute| %>
     <div class="panel panel-default">
       <div class="panel-body college-data">
         <div class="col-xs-4 line text-center image-container">
-          <img src="<%= image_url('background/2.jpeg') %>" width="250">
+          <img class="college-image" src="<%= image_url('background/2.jpeg') %>" width="250">
         </div>
         <div class="col-xs-8 college-content">
           <div class="content-wrapper">
@@ -25,7 +17,7 @@
                 <p><%= institute.reviews.count %> Reviews</p>
               </div>
               <div class="col-xs-4">
-                <a>Details..</a>
+                <%= link_to 'Details..', institute_path(institute.id) %>
               </div>
             </div>
           </div>
