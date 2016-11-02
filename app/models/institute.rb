@@ -6,4 +6,5 @@ class Institute < ApplicationRecord
   has_many :distributables
   has_many :courses
   has_many :reviews
+  accepts_nested_attributes_for :courses
 end

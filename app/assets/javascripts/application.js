@@ -15,3 +15,4 @@
 //= require bootstrap
 //= require_tree .
 //= require 'jquery.backstretch'
+//= require nested_form_fields

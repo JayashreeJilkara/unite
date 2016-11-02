@@ -1,0 +1,35 @@
+<div class="col-xs-10 col-xs-offset-1">
+  <div class="row" style="margin-bottom: 10px">
+    <div class="col-xs-12">
+      <div class="pull-right">
+        <%= link_to 'Create Institute', new_institute_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <% @institutes.each do |institute| %>
+    <div class="panel panel-default">
+      <div class="panel-body college-data">
+        <div class="col-xs-4 line text-center image-container">
+          <img class="college-image" src="<%= image_url('background/2.jpeg') %>" width="250">
+        </div>
+        <div class="col-xs-8 college-content">
+          <div class="content-wrapper">
+            <h4><%= institute.name %></h4>
+            <p class="lead"><%= institute.description %></p>
+            <div class="row text-center" style="bottom: 2%; width: 100%; position: absolute">
+              <div class="col-xs-4">
+                <p><%= (institute.reviews.average(:rating) || 0).round(1) %> Rating</p>
+              </div>
+              <div class="col-xs-4">
+                <p><%= institute.reviews.count %> Reviews</p>
+              </div>
+              <div class="col-xs-4">
+                <%= link_to 'Details..', institute_path(institute.id) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

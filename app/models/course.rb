@@ -1,3 +1,3 @@
 class Course < ApplicationRecord
-  has_one :institute
+  belongs_to :institute
 end

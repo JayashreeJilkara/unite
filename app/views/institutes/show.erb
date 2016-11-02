@@ -13,11 +13,83 @@
     <% } %>
   </ul>
 
+  <% if flash[:error] %>
+  <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Ow!</strong> <%= flash[:error] %>
+  </div>
+  <% end %>
+
   <div class="panel panel-default">
     <div class="panel-body college-data">
-      <pre>
-        <%= @institute.to_json %>
-      </pre>
+      <div class="row">
+        <div class="col-xs-4 line text-center image-container">
+          <img class="college-image" src="<%= image_url('background/2.jpeg') %>" width="250">
+        </div>
+        <div class="col-xs-8 college-content">
+          <div class="content-wrapper">
+            <h4><%= @institute.name %></h4>
+            <p class="lead"><%= @institute.description %></p>
+            <div class="row text-center" style="bottom: 2%; width: 100%; position: absolute">
+              <div class="col-xs-6">
+                <p><%= (@institute.reviews.average(:rating) || 0).round(1) %> Rating</p>
+              </div>
+              <div class="col-xs-6">
+                <p><%= @institute.reviews.count %> Reviews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding: 16px">
+        <h5>Courses Offered: </h5>
+        <table class="table table-striped table-hover ">
+          <thead>
+          <tr>
+            <th>Course</th>
+            <th>Fee Structure</th>
+            <th>Duration</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @institute.courses.each { |course| %>
+            <tr>
+              <td><%= course.course_name %></td>
+              <td>&#8377; <%= course.fee_structure %></td>
+              <td><%= course.duration %></td>
+            </tr>
+          <% } %>
+          </tbody>
+        </table>
+        <h5>Reviews: </h5>
+        <%= form_tag(institute_reviews_path(params[:id]), method: :post, class: 'form-horizontal') do %>
+          <fieldset>
+            <div class="form-group">
+              <div class="col-xs-2">
+                <%= select(:review, :rating, options_for_select([[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]], 5), {}, {class: 'form-control'}) %>
+              </div>
+              <div class="col-xs-8">
+                <%= text_field(:review, :review_comment, class: 'form-control', placeholder: 'Review') %>
+              </div>
+              <div class="col-xs-2">
+                <%= submit_tag 'Post Review', class: 'btn btn-primary' %>
+              </div>
+            </div>
+          </fieldset>
+        <% end %>
+        <br>
+        <div class="list-group">
+        <% @institute.reviews.order('created_at DESC').each { |review| %>
+          <a href="#" class="list-group-item">
+            <h6 class="list-group-item-heading">
+              <%= review.user.first_name %> <%= review.user.last_name %>
+              <small>Rated - <%= review.rating %></small>
+            </h6>
+            <p class="list-group-item-text"><%= review.review_comment %></p>
+          </a>
+        <% } %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
