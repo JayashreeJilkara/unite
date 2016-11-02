@@ -26,9 +26,7 @@ class InstitutesController < ApplicationController
   end
 
   def create
-    institute = Institute.new(institute_params)
-    current_user.institutes << institute
-
+    current_user.institutes.create(institute_params)
     redirect_to my_institutes_path
   end
 
@@ -36,7 +34,7 @@ class InstitutesController < ApplicationController
 
   def institute_params
     params.require(:institute).permit(:name, :description, :image, :courses_attributes =>
-        [:course_name, :fee_structure, :duration]
+        [:course_name, :fee_structure, :duration, :_destroy, :id]
     )
   end
 end
