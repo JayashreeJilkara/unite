@@ -27,5 +27,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootswatch-rails', '3.3.5'
-gem 'carrierwave', '0.11.2'
+gem 'carrierwave', '1.3.2'
 gem 'nested_form_fields', '0.8'
